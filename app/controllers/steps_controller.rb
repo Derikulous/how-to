@@ -8,7 +8,6 @@ class StepsController < ApplicationController
 
   def index
     @steps = @guide.steps
-
   end
 
   # GET /steps/1
@@ -21,8 +20,6 @@ class StepsController < ApplicationController
   # GET /steps/new.json
   def new
     @step = @guide.steps.new(params[:step])
-
-
   end
 
   # GET /steps/1/edit
@@ -69,13 +66,4 @@ class StepsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-
-  
-
-
 end
-end
-
-end
-
