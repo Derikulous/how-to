@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @step.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @step.description %>
+</p>
+
+<p>
+  <b>Guide:</b>
+  <%= @step.guide_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_guide_step_path(@guide, @step) %> |
+<%= link_to 'Back', guide_steps_path(@guide) %>

@@ -1,0 +1,29 @@
+<h1>Steps for <%= @guide.name %></h1>
+
+<% if @guide.steps.empty? %>
+  <p>No steps created yet.</p>
+<% else %>
+<table>
+  <tr>
+    <td>Step No.</td>
+    <td>Name</td>
+    <td>Description</td>
+    <td/><td/><td/>
+  </tr>
+<% @guide.steps.each do |step| %>
+  <tr>
+    <td><%= step.id %></td>
+    <td><%= step.name %></td>
+    <td><%= step.description %></td>
+    <td><%= link_to 'Show', guide_steps_path %></td>
+    <td><%= link_to 'Edit', edit_guide_step_path(@guide, step) %></td>
+    <td><%= link_to 'Destroy', [@guide, step], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+
+<br />
+
+<%= link_to 'New Step', new_guide_step_path(@guide) %>
+<%= link_to 'Back to Guides', root_path %>
